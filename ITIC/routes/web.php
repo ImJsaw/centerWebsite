@@ -16,6 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/manage/project', function () {
-    return view('welcome');
+    return view('projectManage');
 });
 

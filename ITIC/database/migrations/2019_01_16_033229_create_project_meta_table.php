@@ -28,6 +28,6 @@ class CreateProjectMetaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projectMeta');
+        Schema::dropIfExists('projectMediaMeta');
     }
 }

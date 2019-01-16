@@ -1,13 +1,13 @@
 @extends('layout.master')
 
-@section('title', '遊戲大賽')
+@section('title', '後臺系統')
 
 @section('content')
     <section>
         <div class="container" style="margin-top:150px;">
             <div class="row" >
                 <div>
-                    <h1 id="slogan">歡迎來到上傳系統</h1>
+                    <h1 id="slogan">歡迎來到後台系統[專案]</h1>
                 </div>
             </div>
             @if(  session()->get('upload') )
@@ -16,15 +16,6 @@
 
             <form method="POST" enctype="multipart/form-data" action="/fileupload">
                 {{ csrf_field() }}
-                <div class="row">
-                    <div class="col-xs-4"></div>
-                    <div class="col-xs-4">
-                        {{--<p align="center" style="font-size: 150%;">上傳說明請參考<a href="upload_info.pdf">上傳說明</a></p>--}}
-                        <p align="center" style="font-size: 150%;">請確認<a href="#Video_URL">影片連結</a>及 <a href="#FILE_UPLOAD">檔案</a>皆填入</p>
-                        <p align="center" style="font-size: 150%;">再行提交/修改</p>
-                    </div>
-                    <div class="col-xs-4"></div>
-                </div>
                 <div class="row">
                     <div class="col-xs-4 col-sm-4"></div>
                     <div id="user-console" class="col-xs-4 col-sm-4">
@@ -52,20 +43,20 @@
             <form style="margin-top: 15vh;" method="POST" enctype="multipart/form-data" action="/modifiedpass">
                 {{ csrf_field() }}
                 <h2 style="text-align: center;">密碼變更</h2>
-                <div class="row">
+                <div class="row" style="text-align: center;">
                     <div class="col-xs-offset-4">
                         <label style="width: 100px;">新密碼</label>
                         <input style="color: black; width: 200px;" name="password" type="password">
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="text-align: center;">
                     <div class="col-xs-offset-4">
                         <label style="width: 100px;">再輸入一次</label>
                         <input style="color: black; width: 200px;" name="recheck" type="password">
                         <button id="pass_submit" type="submit" class="btn btn-info" disabled="true">變更修改</button>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" style="text-align: center;">
                     <div class="col-xs-offset-4">
                         <p id="match" style="color: yellow; margin-left: 100px;" hidden>兩次密碼不相符</p>
                     </div>

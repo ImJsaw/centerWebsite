@@ -19,7 +19,7 @@ class CreateProjectsTable extends Migration
             $table->date('start_year');
             $table->date('end_year');
             $table->smallInteger('leader_id');
-            $table->integer('mom_project_id');
+            $table->integer('mom_project_id')->nullable();
             $table->text('intro');
         });
     }
