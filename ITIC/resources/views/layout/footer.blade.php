@@ -9,7 +9,7 @@
 
             <div class="col-sm-12">
                 <div class="copyright-text text-center">
-                    <p>&copy; NTUST G.A.M.E Center 2018. All Rights Reserved.</p>
+                    <p>&copy; ITIC 2019. All Rights Reserved.</p>
                 </div>
             </div>
         </div>

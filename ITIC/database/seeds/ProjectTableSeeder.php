@@ -11,10 +11,10 @@ class ProjectTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('projects')->delete();
+        DB::table('project')->delete();
 
         //Test Project
-        DB::table('projects')->insert([
+        DB::table('project')->insert([
             'name' => 'projectName1',
             'start_year' => '2018-1-1',
             'end_year' => '2019-1-1',
@@ -22,7 +22,7 @@ class ProjectTableSeeder extends Seeder
             'intro' => 'the first project :D'
         ]);
 
-        DB::table('projects')->insert([
+        DB::table('project')->insert([
             'name' => 'projectName0002',
             'start_year' => '2007-1-1',
             'end_year' => '2079-1-1',
@@ -30,7 +30,7 @@ class ProjectTableSeeder extends Seeder
             'intro' => 'the longest project...'
         ]);
 
-        DB::table('projects')->insert([
+        DB::table('project')->insert([
             'name' => 'projectName0003',
             'start_year' => '2012-1-1',
             'end_year' => '2015-1-1',

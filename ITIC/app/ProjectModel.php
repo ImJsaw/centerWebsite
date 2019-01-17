@@ -4,8 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class project extends Model{
-    //auto connect to projects table
+class ProjectModel extends Model{
+    protected $table = 'project';
     protected $fillable = [
         'name',
         'start_year',
