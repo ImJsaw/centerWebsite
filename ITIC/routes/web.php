@@ -19,3 +19,5 @@ Route::get('/manage/project', 'Admin\ProjectsController@managePage');
 
 Route::get('/manage/project/{id}', 'Admin\ProjectsController@getProject');
 
+Route::post('/manage/project/edit', 'Admin\ProjectsController@edit')->name('editProject');
+

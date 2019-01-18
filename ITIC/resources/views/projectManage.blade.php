@@ -10,7 +10,7 @@
                 <div>
                     <h1 id="slogan">歡迎來到後台系統[專案]</h1>
                 </div>
-                <table border="1">
+                <table border="5">
                     <tr>
                         <td>專案id</td>
                         <td>專案名稱</td>
@@ -33,37 +33,40 @@
                                 <td>{{$project->mom_project_id}}</td>
                             @endif
                             <td>{{$project->intro}}</td>
+                            <td>
+                                <button onclick="getProject(this)" data-project-id = "{{$project->id}}">修改</button>
+                            </td>
                         </tr>
                     @endforeach
-                    　
                 </table>
-                <?php
-                echo Form::open(array('url' => 'foo/bar'));
-                echo Form::text('username','Username');
-                echo '<br/>';
 
-                echo Form::text('email', 'example@gmail.com');
-                echo '<br/>';
 
-                echo Form::password('password');
-                echo '<br/>';
+                <div id="editForm" style="display:none">
+                    {{Form::open(array('route' => 'editProject'))}}
+                    專案名稱：<input type="text" id="name"><br>
+                    簡介：<textarea id="intro"></textarea><br>
+                    {{Form::submit('Click Me!')}}
+                    {{Form::close()}}
+                </div>
 
-                echo Form::checkbox('name', 'value');
-                echo '<br/>';
 
-                echo Form::radio('name', 'value');
-                echo '<br/>';
-
-                echo Form::file('image');
-                echo '<br/>';
-
-                echo Form::select('size', array('L' => 'Large', 'S' => 'Small'));
-                echo '<br/>';
-
-                echo Form::submit('Click Me!');
-                echo Form::close();
-                ?>
             </div>
         </div>
+
+        <script>
+            function getProject(self){
+                $("#editForm").show();
+                $.ajax({
+                    type:'get',
+                    url:'/manage/project/'+ $(self).data('project-id') ,
+                    data:'_token = <?php echo csrf_token() ?>',
+                    success:function(data){
+                        $("#id").html(data.project.id);
+                        $("#name").html(data.project.name);
+                        $("#intro").html(data.project.intro);
+                    }
+                });
+            }
+        </script>
     </section>
 @endsection

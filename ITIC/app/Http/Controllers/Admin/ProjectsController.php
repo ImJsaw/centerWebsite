@@ -15,13 +15,14 @@ class ProjectsController extends Controller{
         ]);
     }
 
+    //ajax
     public function getProject($id){
-        $projects = ProjectModel::find($id);//find by project ID
-        /*
+        $project = ProjectModel::find($id);//find by project ID
+        return response()->json(array('project'=> $project), 200);
+    }
 
-        return view('projectManage',[
-            'projects'=>$projects
-        ]);
-        */
+    public function edit(){
+
+        return $this->managePage();
     }
 }
