@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 Route::get('/manage/project', 'Admin\ProjectsController@managePage');
 
+Route::get('/manage/project/{id}', 'Admin\ProjectsController@getProject');
+

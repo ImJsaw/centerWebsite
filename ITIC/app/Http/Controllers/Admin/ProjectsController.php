@@ -14,4 +14,14 @@ class ProjectsController extends Controller{
             'projects'=>$projects
         ]);
     }
+
+    public function getProject($id){
+        $projects = ProjectModel::find($id);//find by project ID
+        /*
+
+        return view('projectManage',[
+            'projects'=>$projects
+        ]);
+        */
+    }
 }
