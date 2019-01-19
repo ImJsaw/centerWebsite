@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class ProjectMetaModel extends Model{
+class ProjectMeta extends Model{
     protected $table = 'projectMediaMeta';
     protected $fillable = [
         'project_id',

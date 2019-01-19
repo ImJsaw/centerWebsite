@@ -43,9 +43,29 @@
 
                 <div id="editForm" style="display:none">
                     {{Form::open(array('route' => 'editProject'))}}
-                    專案名稱：<input type="text" id="name"><br>
-                    簡介：<textarea id="intro"></textarea><br>
-                    {{Form::submit('Click Me!')}}
+                    <input type="hidden" name="id" value="project-id" id="pID">
+                    <table class="table" >
+                        <tr>
+                            <td width="100px">
+                                專案名稱
+                            </td>
+                            <td>
+                                <input type="text" name="name" id="pName" >
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="100px">
+                                專案簡介
+                            </td>
+                            <td>
+                                <textarea name="intro" id="pIntro" cols="20" rows="5">
+                                </textarea>
+                            </td>
+                        </tr>
+                    </table>
+                    <div class="buttons-wrapper col-xs-4">
+                        {{Form::submit('submit')}}
+                    </div>
                     {{Form::close()}}
                 </div>
 
@@ -64,6 +84,8 @@
                         $("#id").html(data.project.id);
                         $("#name").html(data.project.name);
                         $("#intro").html(data.project.intro);
+                        $("#pName").attr('value',data.project.name);
+                        $("#pIntro").html(data.project.intro);
                     }
                 });
             }

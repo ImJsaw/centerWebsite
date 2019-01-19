@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/manage/project', 'Admin\ProjectsController@managePage');
+Route::get('/manage/project', 'Admin\ProjectsController@managePage')->name('adminProject');
 
 Route::get('/manage/project/{id}', 'Admin\ProjectsController@getProject');
 

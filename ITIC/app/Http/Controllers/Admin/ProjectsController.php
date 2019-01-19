@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\ProjectModel;
+use App\Project;
 
 class ProjectsController extends Controller{
     //enter manage page
     public function managePage(){
-        $projects = ProjectModel::all();
+        $projects = Project::all();
         return view('projectManage',[
             'projects'=>$projects
         ]);
@@ -17,12 +17,12 @@ class ProjectsController extends Controller{
 
     //ajax
     public function getProject($id){
-        $project = ProjectModel::find($id);//find by project ID
+        $project = Project::find($id);//find by project ID
         return response()->json(array('project'=> $project), 200);
     }
 
-    public function edit(){
+    public function edit(Request $request){
 
-        return $this->managePage();
+        return redirect()->route("adminProject");
     }
 }
